@@ -1,0 +1,37 @@
+NOT STARTED:
+	top level connections
+	xdc connections
+	hardware setup
+		op-amp adder
+		filter (2nd order+)
+		ADC
+		LCD
+	Clock
+		500-1500 hz
+		don't take adc input for sampling mode/analog signal/waveform generator
+		Counter that runs to (adc input + 500 baseline) / 2
+			invert whenever counter reach
+			left shift adc input by 2 bits (multiply by 4)
+				might also need to invert it or something...start without.  Deal with this if the potentiometer works backwards
+	System
+		btn0: reset
+		btn1: select inputs for pwm and toggle clock generation
+			1 for each input of the ADC
+			Therefore the change is in the command sent to the i2c adc
+		LEDs: which sensor input is being used for the clock
+	i2c 1:
+		lcd
+	i2c 2: 
+		ADC
+	
+
+IN PROGRESS:
+
+COMPLETED:
+	Reset Delay
+	PWM - Aaron
+		highest frequency? 
+		Depends on sampling rate of adc
+			Dependent on i2c speed?
+			Max input wave ~500-750 hz?
+		convert to 8 bit input data
