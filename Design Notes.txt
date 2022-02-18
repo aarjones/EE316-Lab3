@@ -1,5 +1,4 @@
 NOT STARTED:
-	top level connections
 	xdc connections
 	hardware setup
 		op-amp adder (op-amp with 10v)
@@ -12,6 +11,8 @@ NOT STARTED:
 		system_controller
 
 IN PROGRESS:
+	top level connections: Aaron
+		wait for addtional components
 	i2c 1: Gianna
 		lcd
 	Clock: Chris
