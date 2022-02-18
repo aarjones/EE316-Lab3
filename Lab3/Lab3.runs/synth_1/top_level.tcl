@@ -33,6 +33,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd
+  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd

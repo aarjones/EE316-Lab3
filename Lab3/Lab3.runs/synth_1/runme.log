@@ -15,9 +15,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5196 
+INFO: Helper process launched with PID 29788 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 818.281 ; gain = 178.051
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 818.289 ; gain = 177.789
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top_level' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:27]
 INFO: [Synth 8-3491] module 'system_controller' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd:5' bound to instance 'Inst_system_controller' of component 'system_controller' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:130]
@@ -27,39 +27,34 @@ INFO: [Synth 8-256] done synthesizing module 'system_controller' (1#1) [C:/Users
 INFO: [Synth 8-3491] module 'i2c_adc_user' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:6' bound to instance 'Inst_i2c_adc_user' of component 'i2c_adc_user' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:145]
 INFO: [Synth 8-638] synthesizing module 'i2c_adc_user' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:29]
 	Parameter ADC_ADDRESS bound to: 7'b1001111 
-WARNING: [Synth 8-3848] Net busy_h in module/entity i2c_adc_user does not have driver. [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:14]
-WARNING: [Synth 8-3848] Net data_valid in module/entity i2c_adc_user does not have driver. [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'i2c_adc_user' (2#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:29]
+	Parameter input_clk bound to: 125000000 - type: integer 
+	Parameter bus_clk bound to: 400000 - type: integer 
+INFO: [Synth 8-3491] module 'i2c_master' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd:36' bound to instance 'Inst_i2c_master' of component 'i2c_master' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'i2c_master' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd:54]
+	Parameter input_clk bound to: 125000000 - type: integer 
+	Parameter bus_clk bound to: 400000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'i2c_master' (2#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'i2c_adc_user' (3#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd:29]
 INFO: [Synth 8-3491] module 'PWM' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd:5' bound to instance 'Inst_PWM' of component 'PWM' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:159]
 INFO: [Synth 8-638] synthesizing module 'PWM' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'PWM' (3#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'PWM' (4#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd:18]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
 INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd:32' bound to instance 'Inst_state_toggle' of component 'btn_debounce_toggle' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:168]
 INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd:42]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
-INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (4#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (5#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd:42]
 	Parameter CNTR_MAX bound to: 16'b1111111111111111 
 INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd:32' bound to instance 'Inst_reset_deb' of component 'btn_debounce_toggle' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:177]
 INFO: [Synth 8-3491] module 'Reset_Delay' declared at 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd:9' bound to instance 'Inst_reset_delay' of component 'reset_delay' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:186]
 INFO: [Synth 8-638] synthesizing module 'Reset_Delay' [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'Reset_Delay' (5#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'Reset_Delay' (6#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd:17]
 WARNING: [Synth 8-3848] Net clock_o in module/entity top_level does not have driver. [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'top_level' (6#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:27]
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port busy_h
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port data_valid
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port sda_adc
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port scl_adc
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port clk
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port reset_h
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port read_adc
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port change_ch
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port adc_sel[1]
-WARNING: [Synth 8-3331] design i2c_adc_user has unconnected port adc_sel[0]
+INFO: [Synth 8-256] done synthesizing module 'top_level' (7#1) [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd:27]
 WARNING: [Synth 8-3331] design top_level has unconnected port clock_o
 WARNING: [Synth 8-3331] design top_level has unconnected port lcd_sda
 WARNING: [Synth 8-3331] design top_level has unconnected port lcd_scl
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 882.051 ; gain = 241.820
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 881.523 ; gain = 241.023
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -72,10 +67,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 882.051 ; gain = 241.820
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 881.523 ; gain = 241.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 882.051 ; gain = 241.820
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 881.523 ; gain = 241.023
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -87,28 +82,30 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1003.906 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1008.215 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1003.906 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1008.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'next_state_reg' in module 'system_controller'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_master'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_adc_user'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -122,8 +119,32 @@ INFO: [Synth 8-802] inferred FSM for state register 'next_state_reg' in module '
                  adc3clk |                              111 |                              111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'next_state_reg' using encoding 'sequential' in module 'system_controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   ready |                        000000001 |                             0000
+                   start |                        000000010 |                             0001
+                 command |                        000000100 |                             0010
+                slv_ack1 |                        000001000 |                             0011
+                      wr |                        000010000 |                             0100
+                slv_ack2 |                        000100000 |                             0110
+                      rd |                        001000000 |                             0101
+                mstr_ack |                        010000000 |                             0111
+                    stop |                        100000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'i2c_master'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                              000 |                              000
+                   ready |                              001 |                              001
+          change_channel |                              010 |                              011
+                    read |                              011 |                              010
+               busy_high |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'i2c_adc_user'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -136,20 +157,36 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input      9 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
-	                8 Bit    Registers := 2     
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 15    
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 7     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 28    
 +---Muxes : 
+	   2 Input      9 Bit        Muxes := 10    
+	   9 Input      9 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 1     
 	   8 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 15    
 	   8 Input      1 Bit        Muxes := 11    
+	   4 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 7     
+	   6 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 12    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -170,6 +207,40 @@ Detailed RTL Component Info :
 	   8 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 3     
 	   8 Input      1 Bit        Muxes := 11    
+Module i2c_master 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 10    
+	   9 Input      9 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+	   3 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 7     
+	   6 Input      1 Bit        Muxes := 3     
+Module i2c_adc_user 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   5 Input      8 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 12    
 Module PWM 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -209,19 +280,18 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3331] design top_level has unconnected port clock_o
-WARNING: [Synth 8-3331] design top_level has unconnected port adc_sda
-WARNING: [Synth 8-3331] design top_level has unconnected port adc_scl
 WARNING: [Synth 8-3331] design top_level has unconnected port lcd_sda
 WARNING: [Synth 8-3331] design top_level has unconnected port lcd_scl
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_system_controller/data_out_reg[0] )
-INFO: [Synth 8-3886] merging instance 'Inst_system_controller/data_out_reg[1]' (FDE) to 'Inst_system_controller/data_out_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Inst_system_controller/data_out_reg[2]' (FDE) to 'Inst_system_controller/data_out_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Inst_system_controller/data_out_reg[3]' (FDE) to 'Inst_system_controller/data_out_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Inst_system_controller/data_out_reg[4]' (FDE) to 'Inst_system_controller/data_out_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Inst_system_controller/data_out_reg[5]' (FDE) to 'Inst_system_controller/data_out_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Inst_system_controller/data_out_reg[6]' (FDE) to 'Inst_system_controller/data_out_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_i2c_adc_user/data_valid_reg )
+INFO: [Synth 8-3886] merging instance 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[6]' (FDE) to 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[7]' (FDE) to 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[1]'
+INFO: [Synth 8-3886] merging instance 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[1]' (FDE) to 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[2]'
+INFO: [Synth 8-3886] merging instance 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[2]' (FDE) to 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[3]'
+INFO: [Synth 8-3886] merging instance 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[3]' (FDE) to 'Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_i2c_adc_user/Inst_i2c_master/addr_rw_reg[5] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -233,13 +303,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -251,7 +321,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1003.906 ; gain = 363.676
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1008.215 ; gain = 367.715
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -275,7 +345,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -288,7 +358,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -300,25 +370,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -336,51 +406,58 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    14|
-|3     |LUT1   |     4|
-|4     |LUT2   |     5|
-|5     |LUT3   |    11|
-|6     |LUT4   |    10|
-|7     |LUT5   |     8|
-|8     |LUT6   |     8|
-|9     |FDRE   |    72|
-|10    |IBUF   |     3|
-|11    |OBUF   |     1|
-|12    |OBUFT  |     1|
+|3     |LUT1   |     7|
+|4     |LUT2   |    19|
+|5     |LUT3   |    17|
+|6     |LUT4   |    35|
+|7     |LUT5   |    30|
+|8     |LUT6   |    52|
+|9     |FDCE   |    27|
+|10    |FDPE   |     6|
+|11    |FDRE   |   113|
+|12    |FDSE   |     2|
+|13    |IBUF   |     3|
+|14    |IOBUF  |     2|
+|15    |OBUF   |     1|
+|16    |OBUFT  |     1|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------+----------------------+------+
 |      |Instance                 |Module                |Cells |
 +------+-------------------------+----------------------+------+
-|1     |top                      |                      |   138|
-|2     |  Inst_PWM               |PWM                   |    28|
-|3     |  Inst_reset_deb         |btn_debounce_toggle   |    29|
-|4     |  Inst_reset_delay       |Reset_Delay           |    33|
-|5     |  Inst_state_toggle      |btn_debounce_toggle_0 |    32|
-|6     |  Inst_system_controller |system_controller     |    10|
+|1     |top                      |                      |   330|
+|2     |  Inst_PWM               |PWM                   |    24|
+|3     |  Inst_i2c_adc_user      |i2c_adc_user          |   171|
+|4     |    Inst_i2c_master      |i2c_master            |   147|
+|5     |  Inst_reset_deb         |btn_debounce_toggle   |    29|
+|6     |  Inst_reset_delay       |Reset_Delay           |    33|
+|7     |  Inst_state_toggle      |btn_debounce_toggle_0 |    32|
+|8     |  Inst_system_controller |system_controller     |    33|
 +------+-------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1005.859 ; gain = 243.773
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1005.859 ; gain = 365.629
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1014.043 ; gain = 246.852
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1014.043 ; gain = 373.543
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1018.082 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1027.973 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 2 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-39 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+47 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1018.082 ; gain = 638.844
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1018.082 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1027.973 ; gain = 649.719
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1027.973 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 18 13:55:18 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 18 14:17:11 2022...
