@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1645146570">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1645206327">
   <File Type="PA-TCL" Name="top_level.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
@@ -16,7 +16,6 @@
         <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/PWM.vhd"/>
         <Attr Name="ImportTime" Val="1644349764"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Lab2/btn_debounce_toggle.vhd">
@@ -24,13 +23,11 @@
         <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/btn_debounce_toggle.vhd"/>
         <Attr Name="ImportTime" Val="1644447039"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/i2c_adc_user.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Lab2/i2c_master.vhd">
@@ -38,7 +35,6 @@
         <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/i2c_master.vhd"/>
         <Attr Name="ImportTime" Val="1644524200"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Lab2/reset_delay.vhd">
@@ -46,7 +42,6 @@
         <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/reset_delay.vhd"/>
         <Attr Name="ImportTime" Val="1644526551"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Lab2/system_controller.vhd">
@@ -60,7 +55,6 @@
     <File Path="$PSRCDIR/sources_1/new/top_level.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>

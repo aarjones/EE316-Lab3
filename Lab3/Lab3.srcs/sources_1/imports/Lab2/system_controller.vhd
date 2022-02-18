@@ -51,13 +51,14 @@ architecture behavioral of system_controller is
 					   run_clk   <= '0';             --turn off the clock
 					   to_change <= '1';             --prepare to change channels
 					   data_out  <= (others => '0'); --reset output data
+					   move_states <= '0';           --don't keep moving states
 					   if adc_busy = '1' then        --if the adc has sent the command to change states
 					       next_state <= adc0;       --move to the adc0 state
 					   end if;
 					   
 					when adc0 =>
-					   adc_sel   <= "00";                            --go to channel 0
 					   run_clk   <= '0';                             --turn off the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -72,16 +73,17 @@ architecture behavioral of system_controller is
 					       data_out <= adc_data;                     --sample it
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
-					       run_clk  <= '1';                          --do it
+					       adc_read <= '0';                          --stop reading
+					       to_change <= '1';                         --and change the channel
 					       move_states <= '1';                       --we will need to move states
 					   end if;
 					   if move_states = '1' and adc_busy = '0' then
-					       next_state <= adc1;
+					       next_state <= adc0clk;
 					   end if;
 					
 					when adc0clk =>
-					   adc_sel   <= "00";                            --go to channel 0
 					   run_clk   <= '1';                             --turn on the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -97,7 +99,7 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_sel     <= "01";                      --change adc channels
-					       run_clk     <= '0';                       --do it
+					       adc_read <= '0';                          --stop reading
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
@@ -106,8 +108,8 @@ architecture behavioral of system_controller is
 					   end if;
 					   
 					when adc1 =>
-					   adc_sel   <= "01";                            --go to channel 1
 					   run_clk   <= '0';                             --turn off the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -123,7 +125,7 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_sel     <= "01";
-					       run_clk     <= '1';                       --do it
+					       adc_read <= '0';                          --stop reading
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
@@ -132,8 +134,8 @@ architecture behavioral of system_controller is
 					   end if;
 					
 					when adc1clk =>
-					   adc_sel   <= "01";                            --go to channel 1
-					   run_clk   <= '1';                             --turn off the clock
+					   run_clk   <= '1';                             --turn on the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -149,7 +151,7 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_sel     <= "10";
-					       run_clk     <= '0';                       --do it
+					       adc_read <= '0';                          --stop reading
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
@@ -158,8 +160,8 @@ architecture behavioral of system_controller is
 					   end if;
 					
 					when adc2 =>
-					   adc_sel   <= "10";                            --go to channel 1
 					   run_clk   <= '0';                             --turn off the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -175,7 +177,7 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_sel     <= "11";
-					       run_clk     <= '0';                       --do it
+					       adc_read <= '0';                          --stop reading
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
@@ -184,8 +186,8 @@ architecture behavioral of system_controller is
 					   end if;
 					
 					when adc3 =>
-					   adc_sel   <= "11";                            --go to channel 1
 					   run_clk   <= '0';                             --turn off the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -201,7 +203,7 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_sel     <= "11";
-					       run_clk     <= '1';                       --do it
+					       adc_read <= '0';                          --stop reading
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
@@ -210,8 +212,8 @@ architecture behavioral of system_controller is
 					   end if;
 					
 					when adc3clk =>
-					   adc_sel   <= "11";                            --go to channel 1
-					   run_clk   <= '1';                             --turn off the clock
+					   run_clk   <= '1';                             --turn on the clock
+					   move_states <= '0';                           --don't keep moving states
 					   if to_change = '1' and adc_busy = '0' then    --if we need to change channels
 					       change_ch <= '1';                         --do it
 					   elsif to_change = '1' and adc_busy = '1' then --otherwise, if the adc is busy and we should change channels
@@ -227,7 +229,7 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_sel     <= "00";
-					       run_clk     <= '0';                       --do it
+					       adc_read <= '0';                          --stop reading
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;

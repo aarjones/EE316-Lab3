@@ -64,7 +64,6 @@ architecture behavioral of i2c_adc_user is
 	begin
 	
 	reset_n <= not reset_h;
-	state <= next_state;
 	
 	Inst_i2c_master : i2c_master
 		port map(
@@ -86,7 +85,7 @@ architecture behavioral of i2c_adc_user is
 	begin
         if rising_edge(clk) then
             if reset_h = '1' then
-                state      <= init;
+                next_state <= init;
                 data_valid <= '0';
                 busy_h     <= '1';
                 data_o     <= (others => '0');
