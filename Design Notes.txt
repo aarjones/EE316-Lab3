@@ -1,18 +1,18 @@
 NOT STARTED:
-	xdc connections
 	hardware setup
 		op-amp adder (op-amp with 10v)
 			non inverting summing amplifier
 		filter (2nd order+)
 		ADC (can run on 5v)
 		LCD (run on 5v)
-	debugging (obviously)
+	hardware debugging (obviously)
 		i2c adc
 		system_controller
 
 IN PROGRESS:
 	top level connections: Aaron
 		wait for addtional components
+		xdc connections
 	i2c 1: Gianna
 		lcd
 	Clock: Chris
@@ -40,7 +40,7 @@ COMPLETED:
 			Dependent on i2c speed?
 			Max input wave ~500-750 hz?
 		convert to 8 bit input data
-	System: Aaron
+	System: Aaron - Testbench looks good
 		btn0: reset
 		btn1: select inputs for pwm and toggle clock generation
 			1 for each input of the ADC
