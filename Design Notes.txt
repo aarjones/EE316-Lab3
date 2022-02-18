@@ -24,7 +24,7 @@ IN PROGRESS:
 				might also need to invert it or something...start without.  Deal with this if the potentiometer works backwards
 
 COMPLETED:
-	i2c 2: Aaron
+	i2c 2: Aaron - testbench looks good
 		ADC
 			address is 1001111
 			to read from the adc:

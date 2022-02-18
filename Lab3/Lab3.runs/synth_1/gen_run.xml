@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1645206327">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1645210496">
   <File Type="PA-TCL" Name="top_level.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_level_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
@@ -30,13 +30,6 @@
         <Attr Name="UsedIn" Val="synthesis"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/Lab2/i2c_master.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/i2c_master.vhd"/>
-        <Attr Name="ImportTime" Val="1644524200"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/Lab2/reset_delay.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/reset_delay.vhd"/>
@@ -49,11 +42,18 @@
         <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/system_controller.vhd"/>
         <Attr Name="ImportTime" Val="1644599345"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/top_level.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Lab2/i2c_master.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/i2c_master.vhd"/>
+        <Attr Name="ImportTime" Val="1644524200"/>
         <Attr Name="UsedIn" Val="synthesis"/>
       </FileInfo>
     </File>

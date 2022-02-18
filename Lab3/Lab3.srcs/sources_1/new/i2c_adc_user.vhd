@@ -47,7 +47,7 @@ architecture behavioral of i2c_adc_user is
 
 	--general signals
 	type stateType is (init, ready, read, change_channel, busy_high);
-	signal state, next_state  : stateType := init;     --state machine vars
+	signal state : stateType := init;     --state machine vars
 	
 	--command signals
 	signal rw : std_logic;
@@ -85,19 +85,19 @@ architecture behavioral of i2c_adc_user is
 	begin
         if rising_edge(clk) then
             if reset_h = '1' then
-                next_state <= init;
+                state <= init;
                 data_valid <= '0';
                 busy_h     <= '1';
                 data_o     <= (others => '0');
             else
-                case state is
+                case(state) is
                     when init =>
                         rw         <= '0';                --first command should be to read
                         data_valid <= '0';                --the output data is not valid
                         data_o     <= (others => '0');    --reset the output data
                         sampled    <= '1';                --don't sample the i2c master
                         busy_h     <= '1';                --we can't accept more commands
-                        next_state <= ready;              --move to the ready state
+                        state <= ready;              --move to the ready state
                         
                     when ready => 
                         busy_h     <= '0';                --we can accept new commands
@@ -106,10 +106,10 @@ architecture behavioral of i2c_adc_user is
                             data_o  <= data_rd;           --do it
                         end if;
                         if change_ch = '1' then           --if we need to send a command
-                            next_state <= change_channel; --do it
+                            state <= change_channel; --do it
                             busy_h <= '1';                --we can't accept new commands
                         elsif read_adc = '1' then         --if we need to read from the adc
-                            next_state <= read;           --do it
+                            state <= read;           --do it
                             busy_h     <= '1';            --we can't accept new commands
                         end if;
                         
@@ -118,7 +118,7 @@ architecture behavioral of i2c_adc_user is
                         i2c_enable <= '1';                --turn on the i2c master
                         sampled    <= '0';                --we haven't sampled the data
                         if i2c_busy = '1' then
-                            next_state <= busy_high;
+                            state <= busy_high;
                         end if;
                         
                     when change_channel =>
@@ -126,13 +126,13 @@ architecture behavioral of i2c_adc_user is
                         i2c_data <= "000000" & adc_sel;
                         i2c_enable <= '1';
                         if i2c_busy = '1' then
-                            next_state <= busy_high;
+                            state <= busy_high;
                         end if;
                     
                     when busy_high =>
                         i2c_enable <= '0';
                         if i2c_busy = '0' then
-                            next_state <= ready;
+                            state <= ready;
                         end if;
                     
                 end case;
