@@ -26,17 +26,19 @@ pwm_o <= pwm;
 
 PWM_Process: process(clk)
 begin
-	if (en = '1' and reset_h = '0' and rising_edge(clk)) then
-		if counter >= to_integer(unsigned(value_i)) then
-			pwm <= '0';
-			counter <= counter + 1;
-		else
-			counter <= counter + 1;
-			pwm <= '1';
-		end if;
-	elsif (rising_edge(clk) and reset_h = '1') then
-		pwm <= '0';
-		counter <= 0;
+    if rising_edge(clk) then
+        if (en = '1' and reset_h = '0') then
+            if counter >= to_integer(unsigned(value_i)) then
+                pwm <= '0';
+                counter <= counter + 1;
+            else
+                counter <= counter + 1;
+                pwm <= '1';
+            end if;
+        elsif (reset_h = '1') then
+            pwm <= '0';
+            counter <= 0;
+        end if;
 	end if;
 end process;
 

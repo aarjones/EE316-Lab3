@@ -2,10 +2,10 @@
 # Vivado v2019.1.3 (64-bit)
 # SW Build 2644227 on Wed Sep  4 09:45:24 MDT 2019
 # IP Build 2633630 on Wed Sep  4 12:30:14 MDT 2019
-# Start of session at: Tue Feb 15 15:43:24 2022
-# Process ID: 24568
+# Start of session at: Fri Feb 18 13:14:22 2022
+# Process ID: 16652
 # Current directory: C:/Users/jones/Desktop/EE316-Lab3/Lab3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25212 C:\Users\jones\Desktop\EE316-Lab3\Lab3\Lab3.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7504 C:\Users\jones\Desktop\EE316-Lab3\Lab3\Lab3.xpr
 # Log file: C:/Users/jones/Desktop/EE316-Lab3/Lab3/vivado.log
 # Journal file: C:/Users/jones/Desktop/EE316-Lab3/Lab3\vivado.jou
 #-----------------------------------------------------------
@@ -13,18 +13,385 @@ start_gui
 open_project C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.xpr
 Scanning sources...
 Finished scanning sources
-WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 820.922 ; gain = 164.328
-add_files -fileset constrs_1 -norecurse {{C:/Xilinx/XDC Files/Cora-Z7-07S-Master.xdc}}
-import_files -fileset constrs_1 {{C:/Xilinx/XDC Files/Cora-Z7-07S-Master.xdc}}
-import_files -norecurse {{C:/Users/jones/OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/reset_delay.vhd} {C:/Users/jones/OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/PWM.vhd} {C:/Users/jones/OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/system_controller.vhd} {C:/Users/jones/OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/i2c_user_logic.vhd} {C:/Users/jones/OneDrive - clarkson.edu/Clarkson Documents/Spring 2022/EE 316/EE316-Lab2/Lab2/i2c_master.vhd}}
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd] -no_script -reset -force -quiet
-remove_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd
-file delete -force C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'system_controller_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj system_controller_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot system_controller_tb_behav xil_defaultlib.system_controller_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot system_controller_tb_behav xil_defaultlib.system_controller_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "system_controller_tb_behav -key {Behavioral:sim_1:Functional:system_controller_tb} -tclbatch {system_controller_tb.tcl} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg
+source system_controller_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'system_controller_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 961.582 ; gain = 39.785
+set_property is_enabled false [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/imports/new/system_controller_tb.vhd]
+set_property used_in_simulation true [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd]
+launch_simulation
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim/simulate.log"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property used_in_simulation false [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2c_adc_user' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj i2c_adc_user_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_behav xil_defaultlib.i2c_adc_user -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_behav xil_defaultlib.i2c_adc_user -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture logic of entity xil_defaultlib.i2c_master [\i2c_master(input_clk=125000000)...]
+Compiling architecture behavioral of entity xil_defaultlib.i2c_adc_user
+Built simulation snapshot i2c_adc_user_behav
+
+****** Webtalk v2019.1.3 (64-bit)
+  **** SW Build 2644227 on Wed Sep  4 09:45:24 MDT 2019
+  **** IP Build 2633630 on Wed Sep  4 12:30:14 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim/xsim.dir/i2c_adc_user_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim/xsim.dir/i2c_adc_user_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Feb 18 13:17:10 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Feb 18 13:17:10 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.086 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2c_adc_user_behav -key {Behavioral:sim_1:Functional:i2c_adc_user} -tclbatch {i2c_adc_user.tcl} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg
+WARNING: Simulation object /system_controller_tb/clk was not found in the design.
+WARNING: Simulation object /system_controller_tb/reset_h was not found in the design.
+WARNING: Simulation object /system_controller_tb/DUT/state was not found in the design.
+WARNING: Simulation object /system_controller_tb/state_btn was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_read was not found in the design.
+WARNING: Simulation object /system_controller_tb/change_ch was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_sel was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_busy was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_val was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_data was not found in the design.
+WARNING: Simulation object /system_controller_tb/data_out was not found in the design.
+WARNING: Simulation object /system_controller_tb/run_clk was not found in the design.
+source i2c_adc_user.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2c_adc_user_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1000.086 ; gain = 0.000
+run all
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2c_adc_user' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj i2c_adc_user_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_behav xil_defaultlib.i2c_adc_user -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_behav xil_defaultlib.i2c_adc_user -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1000.086 ; gain = 0.000
+save_wave_config {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg
+set_property xsim.view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg} [get_filesets sim_1]
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/new/i2c_adc_user_tb.vhd w ]
+add_files -fileset sim_1 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/new/i2c_adc_user_tb.vhd
+update_compile_order -fileset sim_1
+set_property used_in_simulation false [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd]
+update_compile_order -fileset sim_1
+launch_simulation
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim/simulate.log"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2c_adc_user_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj i2c_adc_user_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/new/i2c_adc_user_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2c_adc_user_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture logic of entity xil_defaultlib.i2c_master [\i2c_master(input_clk=125000000)...]
+Compiling architecture behavioral of entity xil_defaultlib.i2c_adc_user [i2c_adc_user_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2c_adc_user_tb
+Built simulation snapshot i2c_adc_user_tb_behav
+
+****** Webtalk v2019.1.3 (64-bit)
+  **** SW Build 2644227 on Wed Sep  4 09:45:24 MDT 2019
+  **** IP Build 2633630 on Wed Sep  4 12:30:14 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim/xsim.dir/i2c_adc_user_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim/xsim.dir/i2c_adc_user_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Feb 18 13:26:47 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Feb 18 13:26:47 2022...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2c_adc_user_tb_behav -key {Behavioral:sim_1:Functional:i2c_adc_user_tb} -tclbatch {i2c_adc_user_tb.tcl} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg
+WARNING: Simulation object /system_controller_tb/clk was not found in the design.
+WARNING: Simulation object /system_controller_tb/reset_h was not found in the design.
+WARNING: Simulation object /system_controller_tb/DUT/state was not found in the design.
+WARNING: Simulation object /system_controller_tb/state_btn was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_read was not found in the design.
+WARNING: Simulation object /system_controller_tb/change_ch was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_sel was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_busy was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_val was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_data was not found in the design.
+WARNING: Simulation object /system_controller_tb/data_out was not found in the design.
+WARNING: Simulation object /system_controller_tb/run_clk was not found in the design.
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg
+WARNING: Simulation object /i2c_adc_user/ADC_ADDRESS was not found in the design.
+WARNING: Simulation object /i2c_adc_user/clk was not found in the design.
+WARNING: Simulation object /i2c_adc_user/reset_h was not found in the design.
+WARNING: Simulation object /i2c_adc_user/busy_h was not found in the design.
+WARNING: Simulation object /i2c_adc_user/state was not found in the design.
+WARNING: Simulation object /i2c_adc_user/read_adc was not found in the design.
+WARNING: Simulation object /i2c_adc_user/change_ch was not found in the design.
+WARNING: Simulation object /i2c_adc_user/adc_sel was not found in the design.
+WARNING: Simulation object /i2c_adc_user/data_o was not found in the design.
+WARNING: Simulation object /i2c_adc_user/data_valid was not found in the design.
+WARNING: Simulation object /i2c_adc_user/sda_adc was not found in the design.
+WARNING: Simulation object /i2c_adc_user/scl_adc was not found in the design.
+WARNING: Simulation object /i2c_adc_user/rw was not found in the design.
+WARNING: Simulation object /i2c_adc_user/sampled was not found in the design.
+WARNING: Simulation object /i2c_adc_user/data_rd was not found in the design.
+WARNING: Simulation object /i2c_adc_user/reset_n was not found in the design.
+WARNING: Simulation object /i2c_adc_user/i2c_enable was not found in the design.
+WARNING: Simulation object /i2c_adc_user/i2c_address was not found in the design.
+WARNING: Simulation object /i2c_adc_user/i2c_data was not found in the design.
+WARNING: Simulation object /i2c_adc_user/i2c_busy was not found in the design.
+source i2c_adc_user_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2c_adc_user_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1025.871 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2c_adc_user_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj i2c_adc_user_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1025.871 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2c_adc_user_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj i2c_adc_user_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1025.871 ; gain = 0.000
+run 300 ns
+run 300 ns
+save_wave_config {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2c_adc_user_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj i2c_adc_user_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot i2c_adc_user_tb_behav xil_defaultlib.i2c_adc_user_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2c_adc_user_tb_behav -key {Behavioral:sim_1:Functional:i2c_adc_user_tb} -tclbatch {i2c_adc_user_tb.tcl} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg
+WARNING: Simulation object /system_controller_tb/clk was not found in the design.
+WARNING: Simulation object /system_controller_tb/reset_h was not found in the design.
+WARNING: Simulation object /system_controller_tb/DUT/state was not found in the design.
+WARNING: Simulation object /system_controller_tb/state_btn was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_read was not found in the design.
+WARNING: Simulation object /system_controller_tb/change_ch was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_sel was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_busy was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_val was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_data was not found in the design.
+WARNING: Simulation object /system_controller_tb/data_out was not found in the design.
+WARNING: Simulation object /system_controller_tb/run_clk was not found in the design.
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg
+source i2c_adc_user_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2c_adc_user_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1025.871 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 15 15:51:54 2022...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 18 13:30:07 2022...
