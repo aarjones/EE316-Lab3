@@ -47,7 +47,7 @@ architecture behavioral of system_controller is
 					when init =>
 					   adc_sel   <= "00";            --go to channel 0
 					   change_ch <= '1';             --send the latch to change channels
-					   adc_read   <= '0';            --don't read from the adc
+					   adc_read  <= '0';             --don't read from the adc
 					   run_clk   <= '0';             --turn off the clock
 					   to_change <= '1';             --prepare to change channels
 					   data_out  <= (others => '0'); --reset output data
@@ -74,10 +74,10 @@ architecture behavioral of system_controller is
 					   end if;
 					   if state_btn = '1' then                       --if we need to change states
 					       adc_read <= '0';                          --stop reading
-					       to_change <= '1';                         --and change the channel
+					       to_change <= '0';                         --and change the channel
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc0clk;
 					   end if;
 					
@@ -103,7 +103,7 @@ architecture behavioral of system_controller is
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc1;
 					   end if;
 					   
@@ -129,7 +129,7 @@ architecture behavioral of system_controller is
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc1clk;
 					   end if;
 					
@@ -155,7 +155,7 @@ architecture behavioral of system_controller is
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc2;
 					   end if;
 					
@@ -181,7 +181,7 @@ architecture behavioral of system_controller is
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc3;
 					   end if;
 					
@@ -207,7 +207,7 @@ architecture behavioral of system_controller is
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc3clk;
 					   end if;
 					
@@ -233,7 +233,7 @@ architecture behavioral of system_controller is
 					       to_change   <= '1';                       --we will need to change channels
 					       move_states <= '1';                       --we will need to move states
 					   end if;
-					   if move_states = '1' and adc_busy = '0' then
+					   if move_states = '1' then
 					       next_state <= adc0;
 					   end if;
 					

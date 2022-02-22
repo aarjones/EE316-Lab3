@@ -11,6 +11,7 @@ entity top_level is
         --ADC
         adc_sda   : inout std_logic; --SDA for ADC
         adc_scl   : inout std_logic; --SCL for ADC
+        adc_data_o: out std_logic_vector(7 downto 0);
         
         --LCD
         lcd_sda   : inout std_logic; --SDA for LCD
@@ -71,7 +72,7 @@ end component;
 
 component i2c_adc_user is
     generic(
-        ADC_ADDRESS : std_logic_vector(6 downto 0) := "1001111"
+        ADC_ADDRESS : std_logic_vector(6 downto 0) := "1001000"
     );
 	port(
 	   --GENERAL 
@@ -161,7 +162,7 @@ begin
             clk => clk,
             reset_h => reset_h,
             en => '1', 
-            value_i => final_data,
+            value_i => adc_data,
             pwm_o => pwm_o
         );
         
@@ -189,6 +190,7 @@ begin
             oRESET => reset_delay_out
         );
         
-    reset_h <= reset_btn_deb and reset_delay_out;
+    adc_data_o <= adc_data;
+    reset_h <= reset_btn_deb or reset_delay_out;
     reset_n <= not reset_h;
 end Behavioral;
