@@ -33,15 +33,10 @@ signal reset_delay_out : std_logic;
 signal reset_btn_deb : std_logic;
 signal state_pulse : std_logic;
 
-signal final_data : std_logic_vector(7 downto 0);
-
 --ADC Related
 signal adc_data : std_logic_vector(7 downto 0);
-signal adc_valid : std_logic;
-signal adc_busy : std_logic;
-signal adc_read : std_logic;
 signal adc_sel : std_logic_vector(1 downto 0);
-signal change_ch : std_logic;
+signal adc_busy : std_logic;
 
 --Clock related
 signal run_clk : std_logic;
@@ -54,16 +49,8 @@ component system_controller is
 		reset_h      : in    std_logic;                     --active-high reset
 		state_btn    : in    std_logic;                     --change states, expects pulse
 		
-		--General Outputs
-		data_out     : out   std_logic_vector(7 downto 0);  --data output to use in the clock, pwm
-		
 		--ADC Connections
-		adc_busy     : in    std_logic;                     --the ADC is busy
-		adc_val      : in    std_logic;                     --sample the data from the ADC
-		adc_data     : in    std_logic_vector(7 downto 0);  --data read from the ADC
-		adc_read     : out   std_logic;                     --read from the adc
 		adc_sel      : out   std_logic_vector(1 downto 0);  --which adc channel to use
-		change_ch    : out   std_logic;                     --Change channels
 		
 		--Clock Connections
 		run_clk      : out   std_logic                      --should the clock be on
@@ -76,16 +63,14 @@ component i2c_adc_user is
     );
 	port(
 	   --GENERAL 
-	   clk       : in  std_logic;                     --clock input
-	   reset_h   : in  std_logic;                     --active-high reset
-	   busy_h    : out std_logic;                     --busy signal
+	   clk        : in  std_logic;                     --clock input
+	   reset_h_in : in  std_logic;                     --active-high reset
+	   state_btn  : in  std_logic;                     --a pulse for when states change
+	   busy_h     : out std_logic;                     --busy signal
 		
 	   --FOR ADC
-	   read_adc   : in  std_logic;                     --should we read from the adc
-	   change_ch  : in  std_logic;                     --send the command to change the address
 	   adc_sel    : in  std_logic_vector(1 downto 0);  --Which ADC input to use
 	   data_o     : out std_logic_vector(7 downto 0);  --The data read from the ADC
-	   data_valid : out std_logic;                     --Data valid pulse
 		
 		-- I2C Connections
 		sda_adc   : inout std_logic;                   --i2c data
@@ -133,26 +118,18 @@ begin
             clk => clk,
             reset_h => reset_h,
             state_btn => state_pulse,
-            data_out => final_data,
-            adc_busy => adc_busy,
-            adc_val => adc_valid,
-            adc_data => adc_data,
-            adc_read => adc_read,
             adc_sel => adc_sel,
-            change_ch => change_ch,
             run_clk => run_clk
         );
     
     Inst_i2c_adc_user : i2c_adc_user
         port map(
             clk => clk,
-            reset_h => reset_h,
+            reset_h_in => reset_h,
+			state_btn => state_pulse,
             busy_h => adc_busy,
-            read_adc => adc_read,
-            change_ch => change_ch,
             adc_sel => adc_sel,
             data_o => adc_data,
-            data_valid => adc_valid,
             sda_adc => adc_sda,
             scl_adc => adc_scl
         );

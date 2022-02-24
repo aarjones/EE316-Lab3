@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Feb 22 15:47:45 2022
-# Process ID: 24508
+# Start of session at: Thu Feb 24 14:46:59 2022
+# Process ID: 19924
 # Current directory: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
 # Command line: vivado.exe -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
 # Log file: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/top_level.vds
