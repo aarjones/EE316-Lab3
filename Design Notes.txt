@@ -3,6 +3,11 @@ NOT STARTED:
 		op-amp adder (op-amp with 10v)
 			non inverting summing amplifier
 		filter (2nd order+)
+			1 k ohms
+			.0015 uF
+			yellow = pwm input
+			gray = input to summer
+			white = summer + inverter output
 		ADC (can run on 5v)
 		LCD (run on 5v)
 	hardware debugging (obviously)
@@ -12,7 +17,7 @@ NOT STARTED:
 IN PROGRESS:
 	top level connections: Aaron
 		wait for addtional components
-		xdc connections
+		xdc connections: waiting for additional components
 	i2c 1: Gianna
 		lcd
 	Clock: Chris

@@ -5,24 +5,22 @@ library work;
 
 entity i2c_adc_user is
     generic(
-        ADC_ADDRESS : std_logic_vector(6 downto 0) := "1001111"
+        ADC_ADDRESS : std_logic_vector(6 downto 0) := "1001000"
     );
 	port(
-	   --GENERAL 
-		clk       : in  std_logic;                     --clock input
-		reset_h   : in  std_logic;                     --active-high reset
-		busy_h    : out std_logic;                     --busy signal
-		
-	   --FOR ADC
-	   read_adc   : in  std_logic;                     --should we read from the adc
-	   change_ch  : in  std_logic;                     --send the command to change the address
-	   adc_sel    : in  std_logic_vector(1 downto 0);  --Which ADC input to use
-	   data_o     : out std_logic_vector(7 downto 0);  --The data read from the ADC
-	   data_valid : out std_logic;                     --Data valid pulse
-		
+		--GENERAL 
+		clk        : in  std_logic;                     --clock input
+		reset_h_in : in  std_logic;                     --active-high reset
+		state_btn  : in  std_logic;                     --a pulse for when states change
+		busy_h     : out std_logic;                     --busy signal
+
+		--FOR ADC
+		adc_sel     : in  std_logic_vector(1 downto 0);  --Which ADC input to use
+		data_o      : out std_logic_vector(7 downto 0);  --The data read from the ADC
+
 		-- I2C Connections
-		sda_adc   : inout std_logic;                   --i2c data
-		scl_adc   : inout std_logic                    --i2c clock
+		sda_adc    : inout std_logic;                   --i2c data
+		scl_adc    : inout std_logic                    --i2c clock
 	);
 end i2c_adc_user;
 
@@ -30,7 +28,7 @@ architecture behavioral of i2c_adc_user is
 	component i2c_master is
 		GENERIC(
 			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-			bus_clk   : INTEGER := 400_000);    --speed the i2c bus (scl) will run at in Hz
+			bus_clk   : INTEGER := 50_000);    --speed the i2c bus (scl) will run at in Hz
 		PORT(
 			clk       : IN     STD_LOGIC;                    --system clock
 			reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -46,12 +44,15 @@ architecture behavioral of i2c_adc_user is
 	END component;
 
 	--general signals
-	type stateType is (init, ready, read, change_channel, busy_high);
+	type stateType is (init, read, change_channel, busy_high);
+	signal reset_h: std_logic;
 	signal state : stateType := init;     --state machine vars
+	signal count : integer range 0 to 7;
+	signal reset_cnt : unsigned(23 DOWNTO 0):=X"000000";
+	signal reset_delated : std_logic;
 	
 	--command signals
 	signal rw : std_logic;
-	signal sampled : std_logic;
 	signal data_rd : std_logic_vector(7 downto 0);
 	
 	--i2c master signals
@@ -63,7 +64,9 @@ architecture behavioral of i2c_adc_user is
 	
 	begin
 	
+	reset_h <= reset_h_in or reset_delayed;
 	reset_n <= not reset_h;
+	data_o <= data_rd;
 	
 	Inst_i2c_master : i2c_master
 		port map(
@@ -84,59 +87,55 @@ architecture behavioral of i2c_adc_user is
 	process(clk) 
 	begin
         if rising_edge(clk) then
-            if reset_h = '1' then
+            if reset_h_in = '1' or state_pulse = '1' then
                 state <= init;
-                data_valid <= '0';
                 busy_h     <= '1';
-                data_o     <= (others => '0');
-            else
+				count <= 0;
+				else
                 case(state) is
                     when init =>
-                        rw         <= '0';                --first command should be to read
-                        data_valid <= '0';                --the output data is not valid
-                        data_o     <= (others => '0');    --reset the output data
-                        sampled    <= '1';                --don't sample the i2c master
+                        rw         <= '0';                --first command should be to write
                         busy_h     <= '1';                --we can't accept more commands
-                        state <= ready;              --move to the ready state
+                        state <= change_channel;          --move to the correct channel
                         
-                    when ready => 
-                        busy_h     <= '0';                --we can accept new commands
-                        if sampled = '0' then             --if we haven't sampled the data
-                            sampled <= '1';               --do it
-                            data_o  <= data_rd;           --do it
-                        end if;
-                        if change_ch = '1' then           --if we need to send a command
-                            state <= change_channel; --do it
-                            busy_h <= '1';                --we can't accept new commands
-                        elsif read_adc = '1' then         --if we need to read from the adc
-                            state <= read;           --do it
-                            busy_h     <= '1';            --we can't accept new commands
-                        end if;
-                        
-                    when read => 
-                        rw         <= '1';                --we're reading
-                        i2c_enable <= '1';                --turn on the i2c master
-                        sampled    <= '0';                --we haven't sampled the data
-                        if i2c_busy = '1' then
-                            state <= busy_high;
-                        end if;
-                        
-                    when change_channel =>
+					when change_channel =>
                         rw <= '0';
-                        i2c_data <= "000000" & adc_sel;
+                        i2c_data <= "010000" & adc_sel;
                         i2c_enable <= '1';
                         if i2c_busy = '1' then
                             state <= busy_high;
                         end if;
-                    
-                    when busy_high =>
+                        
+					when busy_high =>
                         i2c_enable <= '0';
                         if i2c_busy = '0' then
-                            state <= ready;
-                        end if;
-                    
+							if count < 7 then
+								count <= count + 1;
+								state < change_channel;
+							else
+								state <= read;
+							end if;
+                        end if;	
+						
+                    when read => 
+                        rw         <= '1';                --we're reading
+                        i2c_enable <= '1';                --turn on the i2c master
                 end case;
            end if;
         end if;
+
+		--ADC Delay Reset
+		if pause_btn = '1' or pwm_btn = '1' or speed_btn = '1' then
+			reset_cnt <= (others => '0');
+		end if;
+
+		--LCD Delay
+		IF reset_cnt /= X"AFFFFF" THEN --hardware
+			reset_cnt <= reset_cnt + 1;	
+			reset_delayed <= '1';	
+		ELSE
+			reset_delayed <= '0';	
+		END IF;
+
     end process;
 end behavioral;

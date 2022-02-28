@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Feb 24 14:38:12 2022
+# Process ID: 28068
+# Current directory: C:/Users/jones/Desktop/EE316-Lab3/Lab3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15940 C:\Users\jones\Desktop\EE316-Lab3\Lab3\Lab3.xpr
+# Log file: C:/Users/jones/Desktop/EE316-Lab3/Lab3/vivado.log
+# Journal file: C:/Users/jones/Desktop/EE316-Lab3/Lab3\vivado.jou
+#-----------------------------------------------------------sstart_guiopen_project C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 890.828 ; gain = 219.793
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+[Thu Feb 24 14:41:40 2022] Launched synth_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
+[Thu Feb 24 14:41:40 2022] Launched impl_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:17 ; elapsed = 00:01:55 . Memory (MB): peak = 935.645 ; gain = 0.000
+INFO: [Common 17-344] 'launch_runs' was cancelled
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Thu Feb 24 14:42:22 2022] Launched synth_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
+[Thu Feb 24 14:42:22 2022] Launched impl_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Thu Feb 24 14:43:24 2022] Launched synth_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
+[Thu Feb 24 14:43:24 2022] Launched impl_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
+set_property is_enabled false [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd]
+set_property is_enabled false [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/imports/new/system_controller_tb.vhd]
+set_property used_in_simulation false [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd]
+set_property is_enabled true [get_files  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Thu Feb 24 14:46:56 2022] Launched synth_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
+[Thu Feb 24 14:46:56 2022] Launched impl_1...
+Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 24 14:49:16 2022...
