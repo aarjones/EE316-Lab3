@@ -127,7 +127,7 @@ begin
         port map(
             clk => clk,
             reset_h_in => reset_h,
-			state_btn => state_reset,
+			state_btn => state_pulse,
             busy_h => adc_busy,
             adc_sel => adc_sel,
             data_o => adc_data,
