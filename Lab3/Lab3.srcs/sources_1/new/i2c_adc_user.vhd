@@ -47,6 +47,9 @@ architecture behavioral of i2c_adc_user is
 	type stateType is (init, read, change_channel, busy_high);
 	signal reset_h: std_logic;
 	signal state : stateType := init;     --state machine vars
+	signal count : integer range 0 to 7;
+	signal reset_cnt : unsigned(23 DOWNTO 0):=X"000000";
+	signal reset_delated : std_logic;
 	
 	--command signals
 	signal rw : std_logic;
@@ -61,7 +64,7 @@ architecture behavioral of i2c_adc_user is
 	
 	begin
 	
-	reset_h <= reset_h_in or state_btn;
+	reset_h <= reset_h_in or reset_delayed;
 	reset_n <= not reset_h;
 	data_o <= data_rd;
 	
@@ -84,10 +87,11 @@ architecture behavioral of i2c_adc_user is
 	process(clk) 
 	begin
         if rising_edge(clk) then
-            if reset_h = '1' then
+            if reset_h_in = '1' or state_pulse = '1' then
                 state <= init;
                 busy_h     <= '1';
-            else
+				count <= 0;
+				else
                 case(state) is
                     when init =>
                         rw         <= '0';                --first command should be to write
@@ -105,7 +109,12 @@ architecture behavioral of i2c_adc_user is
 					when busy_high =>
                         i2c_enable <= '0';
                         if i2c_busy = '0' then
-                            state <= read;
+							if count < 7 then
+								count <= count + 1;
+								state < change_channel;
+							else
+								state <= read;
+							end if;
                         end if;	
 						
                     when read => 
@@ -114,5 +123,19 @@ architecture behavioral of i2c_adc_user is
                 end case;
            end if;
         end if;
+
+		--ADC Delay Reset
+		if pause_btn = '1' or pwm_btn = '1' or speed_btn = '1' then
+			reset_cnt <= (others => '0');
+		end if;
+
+		--LCD Delay
+		IF reset_cnt /= X"AFFFFF" THEN --hardware
+			reset_cnt <= reset_cnt + 1;	
+			reset_delayed <= '1';	
+		ELSE
+			reset_delayed <= '0';	
+		END IF;
+
     end process;
 end behavioral;
