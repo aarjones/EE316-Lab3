@@ -87,18 +87,16 @@ architecture behavioral of i2c_adc_user is
             if reset_h = '1' then
                 state <= init;
                 busy_h     <= '1';
-                data_o     <= (others => '0');
             else
                 case(state) is
                     when init =>
                         rw         <= '0';                --first command should be to write
-                        data_o     <= (others => '0');    --reset the output data
                         busy_h     <= '1';                --we can't accept more commands
                         state <= change_channel;          --move to the correct channel
                         
 					when change_channel =>
                         rw <= '0';
-                        i2c_data <= "000000" & adc_sel;
+                        i2c_data <= "010000" & adc_sel;
                         i2c_enable <= '1';
                         if i2c_busy = '1' then
                             state <= busy_high;

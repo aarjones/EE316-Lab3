@@ -18,7 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 4
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z007sclg400-1
 
 set_param project.singleFileAddWarning.threshold 0

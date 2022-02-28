@@ -32,6 +32,7 @@ signal reset_n : std_logic;
 signal reset_delay_out : std_logic;
 signal reset_btn_deb : std_logic;
 signal state_pulse : std_logic;
+signal state_reset : std_logic;
 
 --ADC Related
 signal adc_data : std_logic_vector(7 downto 0);
@@ -93,7 +94,7 @@ end component;
 
 component btn_debounce_toggle is
     generic (
-	   constant CNTR_MAX : std_logic_vector(15 downto 0) := X"FFFF"
+	   constant CNTR_MAX : std_logic_vector(15 downto 0) := X"00FF"
 	);
     port( 
         btn_i 	 : in  std_logic;
@@ -126,7 +127,7 @@ begin
         port map(
             clk => clk,
             reset_h_in => reset_h,
-			state_btn => state_pulse,
+			state_btn => state_reset,
             busy_h => adc_busy,
             adc_sel => adc_sel,
             data_o => adc_data,
@@ -147,7 +148,7 @@ begin
         port map(
             btn_i => state_btn,
             clk => clk,
-            btn_o => open,
+            btn_o => state_reset,
             pulse_o => state_pulse,
             toggle_o => open
         );
@@ -170,4 +171,5 @@ begin
     adc_data_o <= adc_data;
     reset_h <= reset_btn_deb or reset_delay_out;
     reset_n <= not reset_h;
+    clock_o <= run_clk;
 end Behavioral;
