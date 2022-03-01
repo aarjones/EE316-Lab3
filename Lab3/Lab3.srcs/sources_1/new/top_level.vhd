@@ -43,6 +43,16 @@ signal adc_busy : std_logic;
 --Clock related
 signal run_clk : std_logic;
 
+component clock_gen is
+    port (
+        clk : in std_logic;
+        reset : in std_logic;
+        freq : in std_logic_vector(7 downto 0);
+        en : in std_logic;
+        clk_out : out std_logic
+    );
+end component;
+
 --COMPONENTS
 component system_controller is
     port(
@@ -193,10 +203,17 @@ begin
             iCLK => clk,
             oRESET => reset_delay_out
         );
+    Inst_clock_gen : clock_gen
+        port map(
+            clk => clk,
+            reset => reset_h,
+            freq => adc_data,
+            en => run_clk,
+            clk_out => clock_o
+        );
         
     adc_data_o <= adc_data;
     reset_h <= reset_btn_deb or reset_delay_out;
     reset_n <= not reset_h;
     reset_lcd <= not(reset_h or state_pulse);
-    clock_o <= run_clk;
 end Behavioral;

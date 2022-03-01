@@ -17,9 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z007sclg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -36,6 +33,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/LCD_Transmitter.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd
+  C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Counter/counter.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd
   C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd
