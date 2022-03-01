@@ -8,7 +8,7 @@ entity counter is
         reset   : in std_logic;
         freq    : in std_logic_vector(7 downto 0); -- 255 down to 0 
         en      : in std_logic;                    -- only output clock when enabl is high
-        clk_out : out std_logic_vector(7 downto 0);
+        clk_out : out std_logic;
     );
 end counter;
 
