@@ -1,11 +1,11 @@
 #-----------------------------------------------------------
-# Vivado v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Feb 28 13:51:55 2022
-# Process ID: 9016
+# Vivado v2019.1.3 (64-bit)
+# SW Build 2644227 on Wed Sep  4 09:45:24 MDT 2019
+# IP Build 2633630 on Wed Sep  4 12:30:14 MDT 2019
+# Start of session at: Tue Mar  1 17:49:28 2022
+# Process ID: 24152
 # Current directory: C:/Users/jones/Desktop/EE316-Lab3/Lab3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19828 C:\Users\jones\Desktop\EE316-Lab3\Lab3\Lab3.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24380 C:\Users\jones\Desktop\EE316-Lab3\Lab3\Lab3.xpr
 # Log file: C:/Users/jones/Desktop/EE316-Lab3/Lab3/vivado.log
 # Journal file: C:/Users/jones/Desktop/EE316-Lab3/Lab3\vivado.jou
 #-----------------------------------------------------------
@@ -16,266 +16,81 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 883.453 ; gain = 191.902
 update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-[Mon Feb 28 13:53:49 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 13:53:49 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:19 . Memory (MB): peak = 945.285 ; gain = 7.801
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-[Mon Feb 28 13:54:59 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 13:54:59 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 945.285 ; gain = 0.000
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-[Mon Feb 28 13:56:45 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 13:56:45 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 945.285 ; gain = 0.000
-open_hw
-connect_hw_server
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2019.1
-  **** Build date : May 24 2019 at 15:13:31
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
-
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210370AFD299A
-open_hw_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2074.941 ; gain = 1107.055
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-set_property PROBES.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.ltx} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.ltx} [get_hw_devices xc7z007s_1]
-current_hw_device [get_hw_devices xc7z007s_1]
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1435] Device xc7z007s (JTAG device index = 1) is not programmed (DONE status = 0).
-set_property PROBES.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.ltx} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.ltx} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-2302] Device xc7z007s (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
-display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z007s_1] -filter {CELL_NAME=~"u_ila_0"}]]
-reset_run impl_1 -prev_step 
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-[Mon Feb 28 14:02:30 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:19 . Memory (MB): peak = 2142.137 ; gain = 0.000
-reset_run impl_1 -prev_step 
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-[Mon Feb 28 14:03:26 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 14:03:26 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 2142.137 ; gain = 0.000
-reset_run impl_1
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-[Mon Feb 28 14:04:54 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 14:04:54 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 2142.137 ; gain = 0.000
-set_property PROBES.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.ltx} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.ltx} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-2302] Device xc7z007s (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7z007sclg400-1
-INFO: [Device 21-403] Loading part xc7z007sclg400-1
-INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2019.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/constrs_1/imports/XDC Files/Cora-Z7-07S-Master.xdc]
-WARNING: [Vivado 12-507] No nets matched 'Inst_i2c_adc_user/reset_h'. [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/constrs_1/imports/XDC Files/Cora-Z7-07S-Master.xdc:156]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/constrs_1/imports/XDC Files/Cora-Z7-07S-Master.xdc:156]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/constrs_1/imports/XDC Files/Cora-Z7-07S-Master.xdc]
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2466.090 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-
-open_run: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 2655.254 ; gain = 513.117
-delete_debug_core [get_debug_cores {u_ila_0 }]
-save_constraints
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 14:40:38 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 14:40:38 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 2736.766 ; gain = 2.945
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 15:02:50 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 15:02:50 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 2737.930 ; gain = 0.879
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 15:03:41 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 15:03:41 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 2738.207 ; gain = 0.277
-open_run impl_1
-INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2019.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 3313.141 ; gain = 0.000
-Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 3313.141 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3313.141 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2 instances were transformed.
-  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-
-open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 3371.145 ; gain = 632.938
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 15:12:14 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 15:12:14 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 3421.098 ; gain = 0.559
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210370AFD299A
-undo
-INFO: [Common 17-17] undo 'set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]'
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 15:23:31 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 15:23:31 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 3421.098 ; gain = 0.000
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210370AFD299A
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-INFO: [Labtools 27-1435] Device xc7z007s (JTAG device index = 1) is not programmed (DONE status = 0).
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 15:52:40 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 15:52:40 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 3434.945 ; gain = 0.000
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 14
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Mon Feb 28 15:57:06 2022] Launched synth_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/runme.log
-[Mon Feb 28 15:57:06 2022] Launched impl_1...
-Run output will be captured here: C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 3434.945 ; gain = 0.000
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'LCD_Transmitter_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj LCD_Transmitter_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+"xelab -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot LCD_Transmitter_tb_behav xil_defaultlib.LCD_Transmitter_tb -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ff80832b0e8b4e3c96c429f19234a3dc --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot LCD_Transmitter_tb_behav xil_defaultlib.LCD_Transmitter_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "LCD_Transmitter_tb_behav -key {Behavioral:sim_1:Functional:LCD_Transmitter_tb} -tclbatch {LCD_Transmitter_tb.tcl} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg} -view {C:/Users/jones/Desktop/EE316-Lab3/Lab3/LCD_Transmitter_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/sim_1/system_controller_tb_behav.wcfg
+WARNING: Simulation object /system_controller_tb/clk was not found in the design.
+WARNING: Simulation object /system_controller_tb/reset_h was not found in the design.
+WARNING: Simulation object /system_controller_tb/DUT/state was not found in the design.
+WARNING: Simulation object /system_controller_tb/state_btn was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_read was not found in the design.
+WARNING: Simulation object /system_controller_tb/change_ch was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_sel was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_busy was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_val was not found in the design.
+WARNING: Simulation object /system_controller_tb/adc_data was not found in the design.
+WARNING: Simulation object /system_controller_tb/data_out was not found in the design.
+WARNING: Simulation object /system_controller_tb/run_clk was not found in the design.
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.sim/i2c_adc_user_behav.wcfg
+WARNING: Simulation object /i2c_adc_user_tb/clk was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/reset_h was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/busy_h was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/DUT/state was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/read_adc was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/change_ch was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/adc_sel was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/data_o was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/data_valid was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/DUT/i2c_busy was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/DUT/i2c_data was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/DUT/i2c_enable was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/sda_adc was not found in the design.
+WARNING: Simulation object /i2c_adc_user_tb/scl_adc was not found in the design.
+open_wave_config C:/Users/jones/Desktop/EE316-Lab3/Lab3/LCD_Transmitter_tb_behav.wcfg
+source LCD_Transmitter_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'LCD_Transmitter_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 942.648 ; gain = 40.934
+run 300 ms
+run: Time (s): cpu = 00:00:28 ; elapsed = 00:00:27 . Memory (MB): peak = 942.648 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon Feb 28 16:10:26 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  1 17:50:35 2022...

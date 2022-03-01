@@ -59,8 +59,8 @@ signal data       : STD_LOGIC_VECTOR(8 DOWNTO 0); -- 9 bits, MSB is RS
 signal byteSel    : integer range 0 to 38:=0;
 signal EN_sig     : std_logic;
 signal en_cnt     : integer range 0 to 2;
-signal pause_cnt  : integer range 0 to input_clock / 5;
-signal pause_max  : integer range 0 to input_clock / 5;
+signal pause_cnt  : integer range 0 to input_clock / 10;
+signal pause_max  : integer range 0 to input_clock / 10;
 
 function std_to_integer( s : std_logic ) return natural is
 begin
@@ -207,7 +207,7 @@ process(clk)
 					case(byteSel) is
 						when 0      => pause_max <= input_clock / 200;
 						when 1      => pause_max <= input_clock / 1000;
-						when 38     => pause_max <= input_clock/5;
+						when 38     => pause_max <= input_clock / 10;
 						when others => pause_max <= input_clock / 10000;
 					end case;
 				
