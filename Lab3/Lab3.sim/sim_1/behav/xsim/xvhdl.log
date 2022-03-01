@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'system_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/LCD_Transmitter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'LCD_Transmitter'

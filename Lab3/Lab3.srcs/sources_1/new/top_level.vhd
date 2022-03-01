@@ -29,6 +29,7 @@ architecture Behavioral of top_level is
 --Reset, Button Related
 signal reset_h : std_logic;
 signal reset_n : std_logic;
+signal reset_lcd : std_logic;
 signal reset_delay_out : std_logic;
 signal reset_btn_deb : std_logic;
 signal state_pulse : std_logic;
@@ -57,6 +58,21 @@ component system_controller is
 		run_clk      : out   std_logic                      --should the clock be on
 	);
 end component;
+
+component LCD_Transmitter IS
+	GENERIC (
+		CONSTANT input_clock : integer := 125_000_000); 
+	PORT(
+		clk       : IN    STD_LOGIC;                     --system clock
+		reset_n   : IN    STD_LOGIC;
+		
+		run_clk   : IN    STD_LOGIC;  --is the clock on
+		adc_sel   : IN    STD_LOGIC_VECTOR(1 DOWNTO 0); 
+		
+		sda       : inout std_logic;                     --i2c data
+		scl       : inout std_logic                      --i2c clock
+    );                   
+END component;
 
 component i2c_adc_user is
     generic(
@@ -123,6 +139,16 @@ begin
             run_clk => run_clk
         );
     
+    Inst_lcd : LCD_Transmitter
+        port map(
+            clk => clk,
+            reset_n => reset_n,
+            run_clk => run_clk,
+            adc_sel => adc_sel,
+            sda => lcd_sda,
+            scl => lcd_scl
+        );
+    
     Inst_i2c_adc_user : i2c_adc_user
         port map(
             clk => clk,
@@ -171,5 +197,6 @@ begin
     adc_data_o <= adc_data;
     reset_h <= reset_btn_deb or reset_delay_out;
     reset_n <= not reset_h;
+    reset_lcd <= not(reset_h or state_pulse);
     clock_o <= run_clk;
 end Behavioral;

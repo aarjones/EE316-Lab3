@@ -3,11 +3,13 @@
 May 24 2019
 15:06:07
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/imports/new/system_controller_tb.vhd,1645220560,vhdl,,,,system_controller_tb,,,,,,,,
+C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/new/LCD_Transmitter_tb.vhd,1646161767,vhdl,,,,lcd_transmitter_tb,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sim_1/new/i2c_adc_user_tb.vhd,1645211401,vhdl,,,,i2c_adc_user_tb,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/PWM.vhd,1645199777,vhdl,,,,pwm,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/btn_debounce_toggle.vhd,1645199777,vhdl,,,,btn_debounce_toggle,,,,,,,,
-C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd,1644524200,vhdl,,,,i2c_master,,,,,,,,
+C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/i2c_master.vhd,1645122121,vhdl,,,,i2c_master,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/reset_delay.vhd,1644526551,vhdl,,,,reset_delay,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/imports/Lab2/system_controller.vhd,1645563129,vhdl,,,,system_controller,,,,,,,,
+C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/LCD_Transmitter.vhd,1646168941,vhdl,,,,lcd_transmitter,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/i2c_adc_user.vhd,1645210921,vhdl,,,,i2c_adc_user,,,,,,,,
 C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/sources_1/new/top_level.vhd,1645199777,vhdl,,,,top_level,,,,,,,,
