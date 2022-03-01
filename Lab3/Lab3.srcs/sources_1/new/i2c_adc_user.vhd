@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 library work;
 
@@ -28,7 +29,7 @@ architecture behavioral of i2c_adc_user is
 	component i2c_master is
 		GENERIC(
 			input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-			bus_clk   : INTEGER := 50_000);    --speed the i2c bus (scl) will run at in Hz
+			bus_clk   : INTEGER := 400_000);    --speed the i2c bus (scl) will run at in Hz
 		PORT(
 			clk       : IN     STD_LOGIC;                    --system clock
 			reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -49,7 +50,7 @@ architecture behavioral of i2c_adc_user is
 	signal state : stateType := init;     --state machine vars
 	signal count : integer range 0 to 7;
 	signal reset_cnt : unsigned(23 DOWNTO 0):=X"000000";
-	signal reset_delated : std_logic;
+	signal reset_delayed : std_logic;
 	
 	--command signals
 	signal rw : std_logic;
@@ -87,11 +88,11 @@ architecture behavioral of i2c_adc_user is
 	process(clk) 
 	begin
         if rising_edge(clk) then
-            if reset_h_in = '1' or state_pulse = '1' then
+            if reset_h_in = '1' or state_btn = '1' then
                 state <= init;
-                busy_h     <= '1';
+                busy_h <= '1';
 				count <= 0;
-				else
+			else
                 case(state) is
                     when init =>
                         rw         <= '0';                --first command should be to write
@@ -111,7 +112,7 @@ architecture behavioral of i2c_adc_user is
                         if i2c_busy = '0' then
 							if count < 7 then
 								count <= count + 1;
-								state < change_channel;
+								state <= change_channel;
 							else
 								state <= read;
 							end if;
@@ -124,18 +125,18 @@ architecture behavioral of i2c_adc_user is
            end if;
         end if;
 
-		--ADC Delay Reset
-		if pause_btn = '1' or pwm_btn = '1' or speed_btn = '1' then
-			reset_cnt <= (others => '0');
-		end if;
+--		--ADC Delay Reset
+--		if state_btn = '1' then
+--			reset_cnt <= (others => '0');
+--		end if;
 
-		--LCD Delay
-		IF reset_cnt /= X"AFFFFF" THEN --hardware
-			reset_cnt <= reset_cnt + 1;	
-			reset_delayed <= '1';	
-		ELSE
-			reset_delayed <= '0';	
-		END IF;
+--		--LCD Delay
+--		IF reset_cnt /= X"AFFFFF" THEN --hardware
+--			reset_cnt <= reset_cnt + 1;	
+--			reset_delayed <= '1';	
+--		ELSE
+--			reset_delayed <= '0';	
+--		END IF;
 
     end process;
 end behavioral;

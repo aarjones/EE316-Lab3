@@ -60,21 +60,25 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param tcl.collectionResultDisplayLimit 0
   set_param chipscope.maxJobs 4
   set_param xicom.use_bs_reader 1
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/impl_1/top_level.dcp
+  create_project -in_memory -part xc7z007sclg400-1
+  set_property board_part digilentinc.com:cora-z7-07s:part0:1.0 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.cache/wt [current_project]
   set_property parent.project_path C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.xpr [current_project]
   set_property ip_output_repo C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.runs/synth_1/top_level.dcp
+  read_xdc {{C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.srcs/constrs_1/imports/XDC Files/Cora-Z7-07S-Master.xdc}}
+  link_design -top top_level -part xc7z007sclg400-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
