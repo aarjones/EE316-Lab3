@@ -22,7 +22,7 @@ ARCHITECTURE user_logic OF LCD_Transmitter IS
 component i2c_master is
 	generic(
 		input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
-		bus_clk   : INTEGER := 100_000);    --speed the i2c bus (scl) will run at in Hz
+		bus_clk   : INTEGER := 50_000);    --speed the i2c bus (scl) will run at in Hz
 	port(
 		clk       : IN     STD_LOGIC;                    --system clock
 		reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -56,11 +56,11 @@ signal i2c_busy    : std_logic;                    --is the i2c component busy?
 --control signals
 signal nibble_sel : std_logic;                    --upper when 0, lower when 1
 signal data       : STD_LOGIC_VECTOR(8 DOWNTO 0); -- 9 bits, MSB is RS
-signal byteSel    : integer range 0 to 38:=0;
+signal byteSel    : integer range 0 to 40:=0;
 signal EN_sig     : std_logic;
 signal en_cnt     : integer range 0 to 2;
-signal pause_cnt  : integer range 0 to input_clock / 10;
-signal pause_max  : integer range 0 to input_clock / 10;
+signal pause_cnt  : integer range 0 to input_clock / 2;
+signal pause_max  : integer range 0 to input_clock / 2;
 
 function std_to_integer( s : std_logic ) return natural is
 begin
@@ -102,7 +102,7 @@ first_line(3)     <= x"20" & x"20" & x"20" & x"20" & x"41" & x"33" & x"3a" & x"2
 --
 second_line(0)    <= x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20" & x"20";
 --                                              C      L       O        C       K              G        E      N
-second_line(1)    <= x"20" & x"20" & x"20" & x"20" & x"4c" & x"4f" & x"20" & x"20" & x"20" & x"47" & x"45" & x"4e" & x"20" & x"20" & x"20" & x"20";
+second_line(1)    <= x"20" & x"20" & x"20" & x"43" & x"4c" & x"4f" & x"43" & x"4B" & x"20" & x"47" & x"45" & x"4e" & x"20" & x"20" & x"20" & x"20";
  
 
 process(byteSel)
@@ -114,40 +114,42 @@ process(byteSel)
        when 3  => data  <= '0'& X"06";
        when 4  => data  <= '0'& X"01";
        when 5  => data  <= '0'& X"0F";
-       when 6 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(127 downto 120);
-       when 7 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(119 downto 112);
-       when 8 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(111 downto 104);
-       when 9 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(103 downto  96);
-       when 10 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(95  downto  88);
-       when 11 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(87  downto  80);
-       when 12 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(79  downto  72); 
-       when 13 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(71  downto  64);
-       when 14 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(63  downto  56);
-       when 15 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(55  downto  48);
-       when 16 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(47  downto  40);
-       when 17 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(39  downto  32);
-       when 18 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(31  downto  24);
-       when 19 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(23  downto  16);
-       when 20 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(15  downto   8);
-       when 21 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(7   downto   0);
-       when 22 => data  <= '0'& X"C0";--Change address to bottom left of screen--
-       when 23 => data  <= '1'& second_line(std_to_integer(run_clk))(127 downto 120);
-       when 24 => data  <= '1'& second_line(std_to_integer(run_clk))(119 downto 112);
-       when 25 => data  <= '1'& second_line(std_to_integer(run_clk))(111 downto 104);
-       when 26 => data  <= '1'& second_line(std_to_integer(run_clk))(103 downto  96);
-       when 27 => data  <= '1'& second_line(std_to_integer(run_clk))(95  downto  88);
-       when 28 => data  <= '1'& second_line(std_to_integer(run_clk))(87  downto  80);
-       when 29 => data  <= '1'& second_line(std_to_integer(run_clk))(79  downto  72); 
-       when 30 => data  <= '1'& second_line(std_to_integer(run_clk))(71  downto  64);
-       when 31 => data  <= '1'& second_line(std_to_integer(run_clk))(63  downto  56);
-       when 32 => data  <= '1'& second_line(std_to_integer(run_clk))(55  downto  48);
-       when 33 => data  <= '1'& second_line(std_to_integer(run_clk))(47  downto  40);
-       when 34 => data  <= '1'& second_line(std_to_integer(run_clk))(39  downto  32);
-       when 35 => data  <= '1'& second_line(std_to_integer(run_clk))(31  downto  24);
-       when 36 => data  <= '1'& second_line(std_to_integer(run_clk))(23  downto  16);
-       when 37 => data  <= '1'& second_line(std_to_integer(run_clk))(15  downto   8);
-       when 38 => data  <= '1'& second_line(std_to_integer(run_clk))(7   downto   0);
-       when others => data <= '0'& X"38"; 
+       when 6  => data  <= '0' & X"0C";
+       when 7  => data  <= '0' & X"80";
+       when 8 => data   <= '1'& first_line(to_integer(unsigned(adc_sel)))(127 downto 120);
+       when 9 => data   <= '1'& first_line(to_integer(unsigned(adc_sel)))(119 downto 112);
+       when 10 => data   <= '1'& first_line(to_integer(unsigned(adc_sel)))(111 downto 104);
+       when 11 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(103 downto  96);
+       when 12 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(95  downto  88);
+       when 13 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(87  downto  80);
+       when 14 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(79  downto  72); 
+       when 15 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(71  downto  64);
+       when 16=> data   <= '1'& first_line(to_integer(unsigned(adc_sel)))(63  downto  56);
+       when 17 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(55  downto  48);
+       when 18 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(47  downto  40);
+       when 19 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(39  downto  32);
+       when 20 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(31  downto  24);
+       when 21 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(23  downto  16);
+       when 22 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(15  downto   8);
+       when 23 => data  <= '1'& first_line(to_integer(unsigned(adc_sel)))(7   downto   0);
+       when 24 => data  <= '0'& X"C0";--Change address to bottom left of screen--
+       when 25 => data  <= '1'& second_line(std_to_integer(run_clk))(127 downto 120);
+       when 26 => data  <= '1'& second_line(std_to_integer(run_clk))(119 downto 112);
+       when 27 => data  <= '1'& second_line(std_to_integer(run_clk))(111 downto 104);
+       when 28 => data  <= '1'& second_line(std_to_integer(run_clk))(103 downto  96);
+       when 29 => data  <= '1'& second_line(std_to_integer(run_clk))(95  downto  88);
+       when 30 => data  <= '1'& second_line(std_to_integer(run_clk))(87  downto  80);
+       when 31 => data  <= '1'& second_line(std_to_integer(run_clk))(79  downto  72); 
+       when 32 => data  <= '1'& second_line(std_to_integer(run_clk))(71  downto  64);
+       when 33 => data  <= '1'& second_line(std_to_integer(run_clk))(63  downto  56);
+       when 34 => data  <= '1'& second_line(std_to_integer(run_clk))(55  downto  48);
+       when 35 => data  <= '1'& second_line(std_to_integer(run_clk))(47  downto  40);
+       when 36 => data  <= '1'& second_line(std_to_integer(run_clk))(39  downto  32);
+       when 37 => data  <= '1'& second_line(std_to_integer(run_clk))(31  downto  24);
+       when 38 => data  <= '1'& second_line(std_to_integer(run_clk))(23  downto  16);
+       when 39 => data  <= '1'& second_line(std_to_integer(run_clk))(15  downto   8);
+       when 40 => data  <= '1'& second_line(std_to_integer(run_clk))(7   downto   0);
+       when others => data <= '0'& X"20"; 
    end case;
 end process;
 
@@ -206,9 +208,9 @@ process(clk)
 				    end if;
 					case(byteSel) is
 						when 0      => pause_max <= input_clock / 200;
-						when 1      => pause_max <= input_clock / 1000;
-						when 38     => pause_max <= input_clock / 10;
-						when others => pause_max <= input_clock / 10000;
+						when 1      => pause_max <= input_clock / 200;
+						when 39     => pause_max <= input_clock / 5;
+						when others => pause_max <= input_clock / 1000;
 					end case;
 				
 				when pause => 
@@ -219,10 +221,10 @@ process(clk)
 					   if nibble_sel = '1' then --if we're at the lower nibble
                             en_cnt <= 0;
                             nibble_sel <= '0';   -- go to the top nibble
-                            if byteSel = 38 then  --if we've done every byte
-                                state <= start;
-                                byteSel <= 0;
-                                --state <= do_nothing; --do nothing until reset
+                            if byteSel = 40 then  --if we've done every byte
+                                --state <= start;
+                                --byteSel <= 6;
+                                state <= do_nothing; --do nothing until reset
                             else
                                 byteSel <= byteSel + 1; --otherwise increment byteSel 
                                 state <= pause;         --and start over
@@ -231,7 +233,7 @@ process(clk)
                             nibble_sel <= '1';
                             state <= pause;
                         end if;
-                        if byteSel /= 38 then
+                        if byteSel /= 40 then
                             state <= start;
                         end if;
                     end if;

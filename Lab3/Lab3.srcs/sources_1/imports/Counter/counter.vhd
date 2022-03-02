@@ -13,22 +13,23 @@ entity clock_gen is
 end clock_gen;
 
 architecture behavioral of clock_gen is
-signal cnt_out : unsigned(19 downto 0) := (others => '0');
-signal counter : integer;
-signal increment : integer := 327; -- (delta 2 - delta 1) / 255
-signal delta_1 : integer := 125000; -- delta 1 constant: ( .5 * ( 1/1500 ) ) / sys_period
+signal cnt : integer;
+signal current_value : integer;
 signal clock_toggler : std_logic := '0';
 
 begin
-    process(clk, reset)
+
+    current_value <= 41000 + 425 * to_integer(unsigned(freq));
+    
+    process(clk, current_value)
         begin
         if (rising_edge(clk)) then
             if (en = '1') then
-                counter <= (delta_1 + increment * to_integer(unsigned(freq))) / 2;
-                cnt_out <= cnt_out + 1;
-                if (cnt_out = to_unsigned(counter, 20)) then
-                    clock_toggler <= not(clock_toggler); -- toggle clock output
-                    cnt_out <= (others => '0');
+                if cnt >= current_value then
+                    clock_toggler <= not clock_toggler;
+                    cnt <= 0;
+                else
+                    cnt <= cnt + 1;
                 end if;
             end if;
         end if;

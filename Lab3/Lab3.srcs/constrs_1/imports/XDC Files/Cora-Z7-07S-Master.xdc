@@ -8,12 +8,12 @@ set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports clk]
 create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_ports clk]
 
 ## RGB LEDs
-set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[7]}]
-set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[6]}]
-set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[5]}]
-set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[4]}]
-set_property -dict {PACKAGE_PIN M17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[3]}]
-set_property -dict {PACKAGE_PIN N17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[2]}]
+#set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[7]}]
+#set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[6]}]
+#set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[5]}]
+#set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[4]}]
+#set_property -dict {PACKAGE_PIN M17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[3]}]
+#set_property -dict {PACKAGE_PIN N17 IOSTANDARD LVCMOS33} [get_ports {adc_data_o[2]}]
 
 ## Buttons
 set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports reset_btn]

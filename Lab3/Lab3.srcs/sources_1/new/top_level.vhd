@@ -152,7 +152,7 @@ begin
     Inst_lcd : LCD_Transmitter
         port map(
             clk => clk,
-            reset_n => reset_n,
+            reset_n => reset_LCD,
             run_clk => run_clk,
             adc_sel => adc_sel,
             sda => lcd_sda,
