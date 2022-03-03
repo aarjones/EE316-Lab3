@@ -1,20 +1,13 @@
 NOT STARTED:
-	hardware setup
-		op-amp adder (op-amp with 10v)
-			non inverting summing amplifier
-		filter (2nd order+)
-			1 k ohms
-			.0015 uF
-			yellow = pwm input
-			gray = input to summer
-			white = summer + inverter output
-		ADC (can run on 5v)
-		LCD (run on 5v)
+	
 	hardware debugging (obviously)
 		i2c adc
 		system_controller
 
 IN PROGRESS:
+	
+
+COMPLETED:	
 	top level connections: Aaron
 		wait for addtional components
 		xdc connections: waiting for additional components
@@ -28,7 +21,17 @@ IN PROGRESS:
 			left shift adc input by 2 bits (multiply by 4)
 				might also need to invert it or something...start without.  Deal with this if the potentiometer works backwards
 
-COMPLETED:
+	hardware setup - Aaron
+		op-amp adder (op-amp with 10v)
+			non inverting summing amplifier
+		filter (2nd order+)
+			1 k ohms
+			.0015 uF
+			yellow = pwm input
+			gray = input to summer
+			white = summer + inverter output
+		ADC (can run on 5v)
+		LCD (run on 5v)
 	i2c 2: Aaron - testbench looks good
 		ADC
 			address is 1001111

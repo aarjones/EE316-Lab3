@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="C:/Users/jones/Desktop/EE316-Lab3-main/Lab3/Lab3.xpr">
+<Project Version="7" Minor="40" Path="C:/Users/jones/Desktop/EE316-Lab3/Lab3/Lab3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="ff80832b0e8b4e3c96c429f19234a3dc"/>
